@@ -1,4 +1,4 @@
-# Preentrega Análisis de Préstamos Bancarios - Loan Prediction Benitez  Maria Laura
+# Parte I Análisis de Préstamos Bancarios - Loan Prediction Benitez  Maria Laura
 "Proyecto: Análisis de Préstamos Bancarios - Loan Prediction ".
 Descripción del Proyecto
 Este proyecto forma parte del curso de Ciencia de Datos en Coderhouse y tiene como objetivo analizar las características que afectan la aprobación de préstamos bancarios. Utilizaremos el Loan Prediction Dataset disponible en Kaggle, que incluye información demográfica y financiera de los solicitantes, junto con el estado de aprobación de los préstamos.
@@ -52,5 +52,28 @@ Requisitos Técnicos
 Python: Utilizado para análisis y visualización de datos.
 Pandas: Para la manipulación y análisis de datos.
 Seaborn y Matplotlib: Para la creación de gráficos y visualizaciones.
-Google Colab o Jupyter Notebook: Para ejecutar el análisis en un entorno de notebook.
+Google Colab: Para ejecutar el análisis en un entorno de notebook.
 GitHub: El proyecto y el dataset están alojados en un repositorio público de GitHub para facilitar la entrega y revisión.
+
+Parte II: Recomendaciones y Propuesta de Modelo Predictivo
+Descripción
+En esta segunda entrega, profundicé en el análisis del dataset, formulando recomendaciones para la evaluación crediticia y proponiendo un modelo de predicción de incumplimiento.
+
+Recomendaciones Basadas en el Análisis
+Con base en el análisis exploratorio, recomiendo:
+
+Evaluar ingresos y estabilidad laboral como factores de riesgo.
+Considerar la antigüedad laboral y propiedad de bienes como indicadores de estabilidad financiera.
+Incorporar puntuaciones externas de riesgo para refinar la precisión en la evaluación.
+Propuesta de Modelo Predictivo: Random Forest
+Se seleccionó Random Forest como modelo preliminar, dado que:
+
+Maneja bien relaciones complejas y no lineales entre variables.
+Permite interpretar la importancia de cada variable en el riesgo de incumplimiento.
+Es fácil de implementar y ajustar en Python usando scikit-learn.
+Variables Clave para el Modelo
+El modelo utiliza variables como Ingreso_Total, Monto_Credito, Dias_Empleado, y Fuente_Externa para predecir el riesgo de incumplimiento.
+
+Conclusión
+La implementación de Random Forest ayudará a la institución a optimizar la evaluación de riesgo y segmentación de clientes en solicitudes de préstamos, permitiendo tomar decisiones informadas y minimizar riesgos financieros.
+
