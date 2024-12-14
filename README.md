@@ -101,6 +101,103 @@ Es fácil de implementar y ajustar en Python usando scikit-learn.
 Variables Clave para el Modelo
 El modelo utiliza variables como Ingreso_Total, Monto_Credito, Dias_Empleado, y Fuente_Externa para predecir el riesgo de incumplimiento.
 
-Conclusión
-La implementación de Random Forest ayudará a la institución a optimizar la evaluación de riesgo y segmentación de clientes en solicitudes de préstamos, permitiendo tomar decisiones informadas y minimizar riesgos financieros.
+Conclusión Parte I y II
+La implementación de Random Forest ayudará a la institución a optimizar la evaluación de riesgo y segmentación de clientes en solicitudes de préstamos, permitiendo tomar decisiones informadas y minimizar riesgos financieros.  
+
+Proyecto Final Evaluaciones y Conclusiones
+Análisis de los Resultados Valores Nulos Las columnas Consultas_credito_anio y Consultas_credito_mes tienen valores nulos, pero han sido imputados correctamente para garantizar la integridad de los datos. Características Seleccionadas Las 5 mejores características seleccionadas según Chi-cuadrado son: Genero Cantidad_hijos Propietario_auto Propietario_inmueble Monto_credito Estas características han demostrado tener la mayor relación estadística con el objetivo (Riesgo_incumplimiento).
+
+Modelos Evaluados Random Forest Entrenamiento:
+
+Precisión y Cobertura: Altas para ambas clases (0 y 1), con valores de 97%-100%. Exactitud (accuracy): 99%, indicando que el modelo funciona excepcionalmente bien en el conjunto de entrenamiento. Matriz de Confusión: Clase 0: Todas las instancias correctas. Clase 1: Solo 33 instancias clasificadas incorrectamente. Prueba:
+
+Precisión y Cobertura: Balanceadas en 90% para ambas clases. Exactitud (accuracy): 90%, un rendimiento sólido. Matriz de Confusión: Clase 0: 546 correctas, 54 incorrectas. Clase 1: 456 correctas, 56 incorrectas. Árbol de Decisión Entrenamiento:
+
+Resultados idénticos a Random Forest, lo que indica que el modelo también generaliza bien en los datos de entrenamiento. Exactitud (accuracy): 99%. Prueba:
+
+Resultados casi idénticos a Random Forest: Precisión y Cobertura: 90%-91%. Exactitud (accuracy)**: 90%. Optimización de Hiperparámetros Árbol de Decisión:
+
+Mejores hiperparámetros: max_depth: Sin límite, lo que permite un ajuste completo del árbol a los datos. min_samples_leaf: 2, para evitar sobreajuste. min_samples_split: 2, indicando que no hay restricciones adicionales para dividir nodos. Random Forest:
+
+Mejores hiperparámetros: max_depth: 10, limitando la profundidad del árbol para evitar sobreajuste. min_samples_split: 10, asegurando que las divisiones solo ocurran con suficientes datos. n_estimators: 100, utilizando 100 árboles para un promedio robusto. Conclusiones Comparación General:
+
+Ambos modelos tienen un rendimiento prácticamente idéntico, con una ligera ventaja en interpretabilidad para el Árbol de Decisión. Random Forest podría ser preferible para escenarios donde la robustez y la resistencia a variaciones sean importantes. Hiperparámetros:
+
+La optimización ajustó los modelos para evitar sobreajuste y mejorar la generalización, especialmente en el caso de Random Forest.
+
+Haz doble clic (o ingresa) para editar
+
+Resumen Ejecutivo
+Contexto Comercial y Problema
+En el sector financiero, la capacidad de predecir el riesgo de incumplimiento de los clientes es fundamental para optimizar las decisiones de crédito y reducir pérdidas financieras. Este proyecto analiza un conjunto de datos del sector bancario para identificar patrones en el comportamiento de los clientes y desarrollar modelos predictivos efectivos que puedan distinguir entre clientes que cumplen o incumplen con sus obligaciones crediticias.
+
+Objetivo del Proyecto
+Desarrollar un modelo de Machine Learning para predecir el riesgo de incumplimiento basado en características demográficas y financieras de los clientes. Los objetivos específicos incluyen:
+
+Identificar las características más relevantes para la predicción del incumplimiento.
+Implementar y evaluar modelos como Random Forest y Árbol de Decisión.
+Generar visualizaciones que expliquen los resultados y guíen la toma de decisiones.
+Procesos Realizados
+Selección y Limpieza del Dataset:
+
+Se seleccionó un dataset del sector bancario con más de 2000 filas y 15 columnas, que cumple con las especificaciones requeridas.
+Se manejaron valores nulos en columnas clave como Consultas_credito_anio y Consultas_credito_mes, utilizando imputación con la mediana.
+Se binarizó la variable objetivo Riesgo_incumplimiento para facilitar el modelado.
+Selección de Características:
+
+Utilizando el método de Chi-cuadrado, se identificaron las 5 características más relevantes:
+Genero
+Cantidad_hijos
+Propietario_auto
+Propietario_inmueble
+Monto_credito
+Análisis Exploratorio y Visualizaciones:
+
+Se generaron gráficos de la importancia de características utilizando Random Forest.
+Se visualizó el Árbol de Decisión para interpretar las reglas generadas por el modelo.
+
+Modelado Predictivo:
+
+Random Forest:
+Precisión en prueba: 90%.
+Mejores hiperparámetros: max_depth=10, min_samples_split=10, n_estimators=100.
+Árbol de Decisión:
+Precisión en prueba: 90%.
+Mejores hiperparámetros: max_depth=None, min_samples_leaf=2, min_samples_split=2.
+Ambos modelos mostraron un desempeño balanceado, con una ligera ventaja para Random Forest en estabilidad.
+Manejo de Desbalanceo de Clases:
+
+Se utilizó SMOTE para equilibrar la distribución entre clases, mejorando la capacidad de los modelos para identificar clientes incumplidores.
+Resultados y Conclusiones
+Modelos:
+
+Ambos modelos alcanzaron una exactitud del 90% en el conjunto de prueba, con buenos indicadores de precisión y cobertura para ambas clases.
+Random Forest ofrece mayor estabilidad, mientras que el Árbol de Decisión es más interpretable.
+Impacto Comercial:
+
+Las características seleccionadas permiten identificar patrones claros en los clientes, lo que facilita la segmentación y la toma de decisiones personalizadas.
+El modelo puede integrarse en sistemas de gestión de riesgos para mejorar la predicción del incumplimiento y optimizar el proceso de aprobación de créditos.
+
+Recomendaciones
+Implementación:
+
+Utilizar Random Forest en producción para garantizar estabilidad y robustez.
+Complementar con Árboles de Decisión para generar reportes interpretables.
+Próximos Pasos:
+
+Ampliar el análisis con datos adicionales, como historial crediticio más detallado.
+Optimizar aún más los modelos con técnicas avanzadas como Gradient Boosting o XGBoost.
+Evaluar el impacto del modelo en el negocio mediante métricas financieras como reducción de pérdidas.
+Documentación:
+
+Incluir gráficos clave y explicaciones en los reportes para presentar los hallazgos a las partes interesadas.
+Anexos
+Visualización del Árbol de Decisión: Una representación gráfica de las reglas generadas por el Árbol de Decisión.
+
+Gráficos de Importancia de Características: Comparación visual de las características más relevantes seleccionadas por Random Forest.
+
+Conclusión de Proyecto Final
+Con este trabajo, se ha construido un sistema predictivo confiable que permite a las instituciones financieras tomar decisiones informadas y reducir el riesgo asociado a los incumplimientos de crédito.
+
+
 
